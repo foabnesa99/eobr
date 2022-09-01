@@ -1,14 +1,26 @@
 package com.ftn.server.model.predmet;
 
+import lombok.*;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
 public class IspitniRok {
 
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    String naziv;
+    private String naziv;
 
-    LocalDate datumPocetkaRoka;
+    private LocalDate datumPocetkaRoka;
 
-    LocalDate datumKrajaRoka;
+    private LocalDate datumKrajaRoka;
 }

@@ -1,15 +1,29 @@
 package com.ftn.server.model.predmet;
 
+import lombok.*;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@Builder
 public class Ispit {
 
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    LocalDateTime vremeIspita;
+    private LocalDateTime vremeIspita;
 
-    IspitniRok ispitniRok;
+    @ManyToOne
+    private IspitniRok ispitniRok;
 
-    Predmet predmet;
+    @OneToOne
+    private Predmet predmet;
 
 }

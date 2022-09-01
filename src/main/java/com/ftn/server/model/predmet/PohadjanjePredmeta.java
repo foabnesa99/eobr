@@ -1,13 +1,27 @@
 package com.ftn.server.model.predmet;
 
 import com.ftn.server.model.student.Student;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Entity
+@Table
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
 public class PohadjanjePredmeta {
 
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    Predmet predmet;
+    @ManyToOne
+    private Predmet predmet;
 
-    Student student;
+    @ManyToOne
+    private Student student;
 
 }

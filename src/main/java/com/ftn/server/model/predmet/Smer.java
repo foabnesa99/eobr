@@ -1,12 +1,24 @@
 package com.ftn.server.model.predmet;
 
+import lombok.*;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table
+@Getter
+@Setter
+@Builder
+@ToString
+@AllArgsConstructor
 public class Smer {
 
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    LocalDate datumPocetkaStudija;
+    private LocalDate datumPocetkaStudija;
 
-    LocalDate datumKrajaStudija;
+    private LocalDate datumKrajaStudija;
 }

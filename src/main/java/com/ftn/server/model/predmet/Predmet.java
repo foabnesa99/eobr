@@ -1,16 +1,30 @@
 package com.ftn.server.model.predmet;
 
 import com.ftn.server.model.Nastavnik;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Entity
+@Table
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
 public class Predmet {
 
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    String naziv;
+    private String naziv;
 
-    Nastavnik predmetniProfesor;
+    @ManyToOne
+    private Nastavnik predmetniProfesor;
 
-    Smer smer;
+    @ManyToOne
+    private Smer smer;
 
 
 }

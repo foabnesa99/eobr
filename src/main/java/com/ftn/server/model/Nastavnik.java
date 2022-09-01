@@ -1,10 +1,23 @@
 package com.ftn.server.model;
 
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Table
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class Nastavnik {
 
-    Korisnik kor;
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-    String id;
+    @OneToOne
+    private Korisnik kor;
 
-    NastavnikRole nastavnikRole;
+    private NastavnikRole nastavnikRole;
 }
