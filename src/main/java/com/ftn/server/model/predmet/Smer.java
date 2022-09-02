@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Builder
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class Smer {
 
     @Id

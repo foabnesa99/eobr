@@ -29,8 +29,6 @@ public class Korisnik {
 
     private String ime;
 
-    private String prezime;
-
     private LocalDate datumRodjenja;
 
     private String korisnickoIme;
@@ -43,6 +41,8 @@ public class Korisnik {
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE", nullable = false)
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean active = true;
+
+    private boolean deleted;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(STRING)
